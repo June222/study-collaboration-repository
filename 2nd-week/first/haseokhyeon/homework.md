@@ -35,6 +35,8 @@ git checkout "버전 번호"
 
 3. `git config --global core.editor "vim"`의 뜻을 설명해보세요.
 
+- 사용하는 에디터를 vim 에디터로 변경하기
+
 # git reset, revert
 1. 위 그림(fig. 1)에서 `git reset --hard 009fae8d669b3bc7eadb5558d2f6f16b50fa7e6e`을 하면 결과가 어떻게 되나요?
 
@@ -42,7 +44,7 @@ git checkout "버전 번호"
 
 2. `git revert 009fae8d669b3bc7eadb5558d2f6f16b50fa7e6e`을 하면 결과가 어떻게 되나요?
 
-- 현재 진행상황은 유지하면서 현재 버전이 message 1으로 변경되고, message 2는 삭제된다.
+- 2개 이상의 버전을 revert 하여 충돌이 일어난다. (에러가 일어남.)
 
 
 3. `git reset ...`과 `git revert ...`는 의미가 비슷한데, 용도에 차이를 두고 사용한다면 어떤 차이가 있나요?
@@ -71,20 +73,43 @@ git checkout "버전 번호"
 ```bash
 git checkout "72974ff7d...."
 git branch "message 4_1"
+git checkout "message 4_1에 대한 버전코드"
 ```
 
 3. 각자의 main branch의 최신 버전에서 `dev-{이름} (예: dev-junwoo)`이라는 브랜치를 만들고 (branch가 고장난 것 같으면 `dev-junwoo_1`처럼 만들어도 됩니다.)
 
-
+![alt text](image.png)
 
 4. 이 과제를 작성하고 본인의 remote repository로 push 한 뒤
+
+![alt text](image-1.png)
+
 5. 강준우 repository에 `dev`라는 branch에 PR을 날려보세요. (push가 안될 경우 `git push --set-upstream dev-{이름}`로 push 해보세요.)
+
+![alt text](image.png)
+
 6. 다했으면 하는 과정 각각을 스크린샷해서 여기에 올려주세요. 드래그앤 드랍으로 하면 됩니다.
 
 ### Advanced
 1. HEAD 옆 origin/main, origin/dev, origin/HEAD는 무슨 뜻일지 추측해보세요.
+
+각 branch에서 main의 위치를 나타내는 의미로 예상됩니다.
+
 2. `git checkout -b {branch_name}`에서 -b 옵션은 '{branch_name}라는 이름으로 새로운 브랜치를 만든다.' 이 명령어 결과와 같은 결과를 만드는 명령어를 찾아보세요.
+
+git branch {branch_name}
+
 3. `git config ...`에서 바꿀 수 있는 다른 명령어들은 무엇이 있나요? 맘에 드는 설정을 바꾼 뒤 알려주세요.
+
+git config --global user.name "haseokhyeon" : commit시에 사용할 사용자 이름을 설정할 수 있다.
+
 4. `git reset --hard ...`처럼 `git reset`에는 `--hard` `--mixed` `--soft`등 옵션이 있는데 이 옵션이 어떤 차이가 있는지 알려주세요.
+
+--hard : 돌아간 commit 이후의 변경 이력을 모두 삭제한다.
+--mixed : 변경 이력은 모두 삭제하지만 변경 내용은 유지한다.
+--soft : 변경 이력은 모두 삭제하지만 변경 내용이 남아있고, staging area에 보존된다.
+
 5. 자주 사용되는 branch의 이름들이 몇 가지가 있습니다. 어떤 것들이 있고 무슨 이유로 그 branch를 사용하는지 2가지만 알려주세요.
 
+master branch : 제품으로 바로 출시될 수 있는 branch
+develop beranch : 다음 출시 버전을 개발하는 branch
