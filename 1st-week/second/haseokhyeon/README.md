@@ -24,6 +24,7 @@ init는 아예 빈 저장소를 만들고, clone은 기존에 있던 저장소�
 clone하려는 directory로 이동한 뒤에
 'git clone 가져오려는 repository의 사이트'를 실행하면 된다.
 
+
 3. .git 폴더에는 어떤 내용이 들어가있나요? 삭제하면 어떻게 되나요?
 
 버전 관리를 할때 사용되는 history등 중요한 정보를 담고 있다. 삭제하면 해당 폴더는 사용할 수 없는 상태가 되어버린다.....
@@ -50,8 +51,8 @@ git log
 # 여러 파일로 하나의 버전
 1. tracked file, untracked file의 차이는 무엇인가요?
 
-tracked file : git이 관리하는 파일, 커밋을 한번이라도 한 이후 git이 수정 여부를 계속 추적하는 파일이다.
-untracked file : git이 관리하지 않는 파일, 한번도 버전관리가 이루어지지 않아서 git이 수정 여부를 추적하지 않는 파일이다.
+tracked file : git이 관리하는 파일, 커밋을 한번이라도 한 이후 git이 수정 여부를 계속 추적하는 파일이다. (history에 올라간 적 있는 파일)
+untracked file : git이 관리하지 않는 파일, 한번도 버전관리가 이루어지지 않아서 git이 수정 여부를 추적하지 않는 파일이다. (history에 올라간 적 없는 파일)
 
 2. git은 모든 파일을 항상 track(추적)하지 않는데 왜 그럴까요?
 
