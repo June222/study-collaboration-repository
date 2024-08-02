@@ -31,4 +31,5 @@
 저는 누구게요?ㅎㅎㅎ
 하하하하하하하
 
-
+# 참고 & 협조
+- [APPTIVE Git Workshop](https://github.com/ApptiveDev/workshop-git)
